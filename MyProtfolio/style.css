@@ -1,0 +1,173 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: white; /* Change background color to white */
+    color: black;
+    position: fixed; /* Fix the navbar at the top */
+    width: 100%; /* Make sure the navbar takes up the full width */
+    top: 0; /* Stick to the top */
+    left: 0;
+    z-index: 1000; /* Ensure the navbar is always on top of other content */
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for better visibility */
+}
+
+.navbar .logo {
+    font-size: 24px;
+    color: black; /* Make logo text black to stand out on the white background */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: black; /* Default text color of buttons */
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Default "Home" button styling */
+.nav-links a[href="#home"] {
+    background-color: rgb(21, 221, 35); /* Default color for Home button */
+    color: white; /* Make Home button text white */
+    border-radius: 4px;
+}
+
+/* Hover effect for other buttons */
+.nav-links a:hover {
+    background-color: rgb(22, 213, 35); /* Change background color to blue on hover */
+    color: white; /* Make text white when hovered */
+}
+
+/* Sections */
+section {
+    padding: 100px 20px;
+    text-align: center;
+    margin-top: 80px; /* Added to prevent content from being hidden behind the fixed navbar */
+}
+
+/* Home Section */
+.home-section {
+    background-image: url('https://cdn.pixabay.com/photo/2021/08/04/13/06/software-developer-6521720_1280.jpg'); /* Replace with your coding background image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+}
+
+.home-section .intro-text {
+    margin-top: 200px;
+    color: white;
+}
+
+.home-section h1, .home-section h2 {
+    font-size: 48px;
+    margin: 20px 0;
+}
+
+/* About Section */
+.about-section {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Projects Section */
+.projects-section {
+    background-color: #eaeaea;
+    color: #333;
+}
+
+/* Skills Section */
+.skills-section {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.skills-list li {
+    list-style: none;
+    background-color: #e0e0e0;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: #333;
+    color: white;
+    padding-bottom: 50px;
+}
+
+.contact-section a {
+    color: #00b0ff;
+}
+
+/* Dynamic typing effect */
+#dynamic-text {
+    border-right: 2px solid lightblue;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    width: 0;
+    animation: typing 3.5s steps(30, end), blink-caret 0.75s step-end infinite;
+}
+
+/* Typing effect */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 250px; } /* Adjust width based on the text length */
+}
+
+/* Blinking cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: lightblue; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        display: none;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .home-section h1, .home-section h2 {
+        font-size: 32px;
+    }
+
+    .skills-list {
+        flex-direction: column;
+    }
+}
